@@ -1,0 +1,10 @@
+﻿@page "/stateful-counter"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<PageTitle>Stateful Counter</PageTitle>
+
+<h1>Stateful Counter</h1>
+
+<p role="status">Current count: @CounterState.Value.Count</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
