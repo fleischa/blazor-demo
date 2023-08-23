@@ -1,0 +1,22 @@
+﻿<ButtonDecorator Type="@Type" Intention="@Intention" TabIndex="TabIndex" IsDisabled="@IsDisabled" OnClick="@OnClick">
+    <div class="grid grid-flow-row auto-rows-auto gap-1 p-2">
+        <div class="grid grid-flow-col auto-cols-auto justify-start items-center text-left gap-2">
+            @if (!string.IsNullOrEmpty(IconName))
+            {
+                if (Intention == Intention.Remove)
+                {
+                    <Icon Name="@IconName" Class="w-5 h-5 text-red-600"/>
+                }
+                else
+                {
+                    <Icon Name="@IconName" Class="w-5 h-5"/>
+                }
+            }
+            @Header
+        </div>
+        <div class="w-full h-px bg-neutral-400"></div>
+        <div class="text-sm text-left pt-1">
+            <p>@Description</p>
+        </div>
+    </div>
+</ButtonDecorator>

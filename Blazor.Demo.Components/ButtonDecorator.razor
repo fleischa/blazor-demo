@@ -1,0 +1,12 @@
+﻿@if (IsDisabled)
+{
+    <button type="@ButtonTypeString" tabindex="@TabIndex" class="bg-gradient-to-b from-neutral-100 to-neutral-200 border border-neutral-400 rounded p-0 outline-none drop-shadow opacity-50" disabled>
+        @ChildContent
+    </button>
+}
+else
+{
+    <button type="@ButtonTypeString" tabindex="@TabIndex" class="bg-gradient-to-b from-neutral-100 to-neutral-200 border border-neutral-400 rounded p-0 outline-none drop-shadow @IntentionClasses" @onclick="OnClick">
+        @ChildContent
+    </button>
+}

@@ -1,6 +1,6 @@
 using Microsoft.JSInterop;
 
-namespace Blazor.Demo.Styles;
+namespace Blazor.Demo.Components;
 
 public class DemoJsInterop : IAsyncDisposable
 {
@@ -9,7 +9,9 @@ public class DemoJsInterop : IAsyncDisposable
 	public DemoJsInterop(IJSRuntime jsRuntime)
 	{
 		this.moduleTask = new Lazy<Task<IJSObjectReference>>(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-			"import", "./_content/Blazor.Demo.Styles/exampleJsInterop.js").AsTask());
+				"import",
+				"./_content/Blazor.Demo.Components/demoJsInterop.js")
+			.AsTask());
 	}
 
 	public async ValueTask DisposeAsync()
