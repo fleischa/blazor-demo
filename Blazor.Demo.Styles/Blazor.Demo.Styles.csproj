@@ -5,8 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-
-
+    
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
     </ItemGroup>
@@ -14,5 +13,9 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.9"/>
     </ItemGroup>
+
+    <Target Name="PreBuild" Condition="'$(Configuration)'=='Debug'" BeforeTargets="PreBuildEvent">
+        <Exec Command="npx postcss .\src\demo.css -o .\wwwroot\css\demo.min.css"/>
+    </Target>
 
 </Project>
