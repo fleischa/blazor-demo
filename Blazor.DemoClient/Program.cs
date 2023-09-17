@@ -1,4 +1,5 @@
 using Blazor.Demo.Client;
+using Blazor.Demo.Modal;
 using Blazor.Demo.State;
 using Fluxor;
 using Microsoft.AspNetCore.Components.Web;
@@ -21,5 +22,7 @@ builder.Services.AddFluxor(o =>
 });
 
 builder.Services.AddApiAuthorization();
+
+builder.Services.AddModal();
 
 await builder.Build().RunAsync();
